@@ -6,10 +6,16 @@
   <title>Manajemen Prestasi - SIDAMAS</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
+
+    html, body {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
       background: #f4f6f9;
+    }
+
+    body {
       display: flex;
+      overflow: hidden;
     }
 
     .sidebar {
@@ -18,6 +24,7 @@
       padding: 30px 20px;
       box-shadow: 2px 0 8px rgba(0,0,0,0.05);
       height: 100vh;
+      overflow-y: auto;
     }
 
     .sidebar h2 {
@@ -50,6 +57,8 @@
     .main {
       flex: 1;
       padding: 30px;
+      height: 100vh;
+      overflow-y: auto;
     }
 
     .header {
@@ -95,6 +104,8 @@
     th {
       background: #2d5a57;
       color: white;
+      position: sticky;
+      top: 0;
     }
 
     tr:nth-child(even) {
@@ -123,6 +134,16 @@
     .aksi-btn a {
       text-decoration: underline;
       color: #2d5a57;
+    }
+
+    /* Scrollbar styling */
+    .table-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -164,75 +185,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2024010001</td>
-            <td>Ahmad Fauzi</td>
-            <td>Juara 1 Lomba Debat Hukum Nasional</td>
-            <td>Akademik</td>
-            <td>Nasional</td>
-            <td>2024-03-15</td>
-            <td><a href="#">Lihat File</a></td>
-            <td class="aksi-btn">
-              <button class="edit-btn">Edit</button>
-              <button class="delete-btn">Hapus</button>
-            </td>
-          </tr>
-          <tr>
-            <td>2024010002</td>
-            <td>Siti Nurhalimah</td>
-            <td>Runner-up MTQ Mahasiswa</td>
-            <td>Non-Akademik</td>
-            <td>Regional</td>
-            <td>2023-12-05</td>
-            <td><a href="#">Lihat File</a></td>
-            <td class="aksi-btn">
-              <button class="edit-btn">Edit</button>
-              <button class="delete-btn">Hapus</button>
-            </td>
-          </tr>
-          <tr>
-            <td>2024010003</td>
-            <td>Dinda Pratiwi</td>
-            <td>Juara 1 Lomba Karya Tulis Ilmiah</td>
-            <td>Akademik</td>
-            <td>Nasional</td>
-            <td>2024-05-12</td>
-            <td><a href="#">Lihat File</a></td>
-            <td class="aksi-btn">
-              <button class="edit-btn">Edit</button>
-              <button class="delete-btn">Hapus</button>
-            </td>
-          </tr>
-          <tr>
-            <td>2024010011</td>
-            <td>Rizky Ramadhan</td>
-            <td>Finalis Debat Bahasa Inggris</td>
-            <td>Non-Akademik</td>
-            <td>Internasional</td>
-            <td>2023-11-20</td>
-            <td><a href="#">Lihat File</a></td>
-            <td class="aksi-btn">
-              <button class="edit-btn">Edit</button>
-              <button class="delete-btn">Hapus</button>
-            </td>
-          </tr>
-          <tr>
-            <td>2023010122</td>
-            <td>Nisa Aulia</td>
-            <td>Juara 2 Hackathon Mahasiswa</td>
-            <td>Akademik</td>
-            <td>Provinsi</td>
-            <td>2022-10-01</td>
-            <td><a href="#">Lihat File</a></td>
-            <td class="aksi-btn">
-              <button class="edit-btn">Edit</button>
-              <button class="delete-btn">Hapus</button>
-            </td>
-          </tr>
+          <!-- Dummy Data -->
+          <tr><td>2024010001</td><td>Ahmad Fauzi</td><td>Juara 1 Debat Hukum</td><td>Akademik</td><td>Nasional</td><td>2024-03-15</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2024010002</td><td>Siti Nurhalimah</td><td>Runner-up MTQ Mahasiswa</td><td>Non-Akademik</td><td>Regional</td><td>2023-12-05</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2024010003</td><td>Dinda Pratiwi</td><td>Juara 1 Karya Tulis Ilmiah</td><td>Akademik</td><td>Nasional</td><td>2024-05-12</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2024010004</td><td>Muhammad Iqbal</td><td>Top 5 Hackathon</td><td>Akademik</td><td>Nasional</td><td>2024-04-02</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2023010021</td><td>Fitri Aisyah</td><td>Juara 2 Duta Bahasa</td><td>Non-Akademik</td><td>Provinsi</td><td>2023-07-20</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2023010111</td><td>Rizky Maulana</td><td>Juara 1 Essay Ekonomi</td><td>Akademik</td><td>Nasional</td><td>2023-10-12</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2022010055</td><td>Nadya Lestari</td><td>Peserta Magang BUMN</td><td>Non-Akademik</td><td>Nasional</td><td>2024-01-25</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2024010020</td><td>Yusuf Ramadhan</td><td>Juara 3 Olimpiade Matematika</td><td>Akademik</td><td>Regional</td><td>2024-02-18</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2023010105</td><td>Aulia Safira</td><td>Finalis Debat Inggris</td><td>Akademik</td><td>Internasional</td><td>2023-11-30</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2021010101</td><td>Hasan Basri</td><td>Kontributor Jurnal Nasional</td><td>Akademik</td><td>Nasional</td><td>2023-09-14</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2020010023</td><td>Eva Yuliana</td><td>Sayembara Puisi</td><td>Non-Akademik</td><td>Nasional</td><td>2023-10-01</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
+          <tr><td>2024010009</td><td>Salma Nabila</td><td>Lomba Cipta Lagu Islami</td><td>Non-Akademik</td><td>Provinsi</td><td>2024-02-09</td><td><a href="#">File</a></td><td class="aksi-btn"><button class="edit-btn">Edit</button><button class="delete-btn">Hapus</button></td></tr>
         </tbody>
       </table>
     </div>
   </main>
-
 </body>
 </html>

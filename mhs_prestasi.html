@@ -6,10 +6,16 @@
   <title>Prestasi Mahasiswa - SIDAMAS</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
+
+    html, body {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
       background: #f4f6f9;
+    }
+
+    body {
       display: flex;
+      overflow: hidden;
     }
 
     .sidebar {
@@ -18,6 +24,7 @@
       padding: 30px 20px;
       box-shadow: 2px 0 8px rgba(0,0,0,0.05);
       height: 100vh;
+      overflow-y: auto;
     }
 
     .sidebar h2 {
@@ -49,6 +56,8 @@
 
     .main {
       flex: 1;
+      height: 100vh;
+      overflow-y: auto;
       padding: 30px;
     }
 
@@ -84,6 +93,8 @@
     th {
       background: #2d5a57;
       color: white;
+      position: sticky;
+      top: 0;
     }
 
     tr:nth-child(even) {
@@ -93,6 +104,16 @@
     td a {
       text-decoration: underline;
       color: #2d5a57;
+    }
+
+    /* Scrollbar styling for horizontal */
+    .table-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .table-container::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -131,34 +152,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2024010001</td>
-            <td>Ahmad Fauzi</td>
-            <td>Juara 1 Lomba Debat Hukum Nasional</td>
-            <td>Akademik</td>
-            <td>Nasional</td>
-            <td>2024-03-15</td>
-            <td><a href="#">Lihat File</a></td>
-          </tr>
-          <tr>
-            <td>2024010002</td>
-            <td>Siti Nurhalimah</td>
-            <td>Runner-up MTQ Mahasiswa</td>
-            <td>Non-Akademik</td>
-            <td>Regional</td>
-            <td>2023-12-05</td>
-            <td><a href="#">Lihat File</a></td>
-          </tr>
-          <tr>
-            <td>2024010003</td>
-            <td>Dinda Pratiwi</td>
-            <td>Juara 1 Lomba Karya Tulis Ilmiah</td>
-            <td>Akademik</td>
-            <td>Nasional</td>
-            <td>2024-05-12</td>
-            <td><a href="#">Lihat File</a></td>
-          </tr>
-  <tr>
+           <tr>
     <td>2024010001</td>
     <td>Ahmad Fauzi</td>
     <td>Juara 1 Lomba Debat Hukum Nasional</td>
@@ -293,7 +287,17 @@
     <td>2024-02-09</td>
     <td><a href="#">Lihat File</a></td>
   </tr>
-</tbody>
+          <tr>
+            <td>2024010001</td>
+            <td>Ahmad Fauzi</td>
+            <td>Juara 1 Lomba Debat Hukum Nasional</td>
+            <td>Akademik</td>
+            <td>Nasional</td>
+            <td>2024-03-15</td>
+            <td><a href="#">Lihat File</a></td>
+          </tr>
+          <!-- Tambahkan baris lainnya -->
+        </tbody>
       </table>
     </div>
   </main>
