@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prestasi Mahasiswa - SIDAMAS</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 230px;
+      background: #fff;
+      padding: 30px 20px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2d5a57;
+      margin-bottom: 30px;
+    }
+
+    .sidebar nav {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .nav-link {
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: #2d5a57;
+      background: #f0f0f0;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background: #2d5a57;
+      color: #fff;
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .header {
+      margin-bottom: 24px;
+    }
+
+    .header h1 {
+      font-size: 22px;
+      color: #2d5a57;
+      margin-bottom: 8px;
+    }
+
+    .table-container {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1000px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 16px;
+    }
+
+    th {
+      background: #2d5a57;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    td a {
+      text-decoration: underline;
+      color: #2d5a57;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>SIDAMAS</h2>
+    <nav>
+      <a href="#" class="nav-link">Dashboard</a>
+      <a href="#" class="nav-link">Data Saya</a>
+      <a href="#" class="nav-link">Prestasi Saya</a>
+      <a href="#" class="nav-link active">Prestasi Mahasiswa</a>
+      <a href="#" class="nav-link">Pengaturan</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="header">
+      <h1>Prestasi Mahasiswa UIN</h1>
+      <p>Lihat daftar prestasi mahasiswa UIN yang sudah terverifikasi.</p>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Judul Prestasi</th>
+            <th>Jenis</th>
+            <th>Tingkat</th>
+            <th>Tanggal</th>
+            <th>Bukti</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024010001</td>
+            <td>Ahmad Fauzi</td>
+            <td>Juara 1 Lomba Debat Hukum Nasional</td>
+            <td>Akademik</td>
+            <td>Nasional</td>
+            <td>2024-03-15</td>
+            <td><a href="#">Lihat File</a></td>
+          </tr>
+          <tr>
+            <td>2024010002</td>
+            <td>Siti Nurhalimah</td>
+            <td>Runner-up MTQ Mahasiswa</td>
+            <td>Non-Akademik</td>
+            <td>Regional</td>
+            <td>2023-12-05</td>
+            <td><a href="#">Lihat File</a></td>
+          </tr>
+          <tr>
+            <td>2024010003</td>
+            <td>Dinda Pratiwi</td>
+            <td>Juara 1 Lomba Karya Tulis Ilmiah</td>
+            <td>Akademik</td>
+            <td>Nasional</td>
+            <td>2024-05-12</td>
+            <td><a href="#">Lihat File</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>
