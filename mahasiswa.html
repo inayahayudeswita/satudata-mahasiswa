@@ -11,9 +11,13 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
       background: #f4f6f9;
+    }
+
+    .wrapper {
       display: flex;
       height: 100vh;
       overflow: hidden;
@@ -28,6 +32,7 @@
       display: flex;
       flex-direction: column;
       gap: 30px;
+      flex-shrink: 0;
     }
 
     .sidebar h2 {
@@ -141,7 +146,7 @@
     }
 
     th {
-      background:  #2d5a57;;
+      background: #2d5a57;
       color: #faf4f4;
       font-weight: 600;
     }
@@ -198,124 +203,99 @@
   </style>
 </head>
 <body>
-
-  <div class="sidebar">
-    <h2>SIDAMAS</h2>
-    <nav>
-      <div class="nav-link">Menu Utama</div>
-      <div class="nav-link active">Data Mahasiswa</div>
-      <div class="nav-link">Data Fakultas</div>
-      <div class="nav-link">Pengaturan</div>
-    </nav>
-  </div>
-
-  <div class="main">
-    <div class="header-box">
-      <h1>Selamat Datang di Dashboard SIDAMAS</h1>
-      <p>Sistem Satu Data Mahasiswa UIN NEW YORK - Pusat informasi terintegrasi untuk manajemen data kemahasiswaan.</p>
+  <div class="wrapper">
+    <div class="sidebar">
+      <h2>SIDAMAS</h2>
+      <nav>
+        <div class="nav-link">Menu Utama</div>
+        <div class="nav-link active">Data Mahasiswa</div>
+        <div class="nav-link">Data Fakultas</div>
+        <div class="nav-link">Pengaturan</div>
+      </nav>
     </div>
 
-    <div class="filter-box">
-      <div class="filter-group">
-        <label>Cari Mahasiswa</label>
-        <input type="text" placeholder="Nama, NIM, atau Email..."/>
+    <div class="main">
+      <div class="header-box">
+        <h1>Selamat Datang di Dashboard SIDAMAS</h1>
+        <p>Sistem Satu Data Mahasiswa UIN NEW YORK - Pusat informasi terintegrasi untuk manajemen data kemahasiswaan.</p>
       </div>
-      <div class="filter-group">
-        <label>Fakultas</label>
-        <select>
-          <option>Semua Fakultas</option>
-          <option>Fakultas Sains</option>
-          <option>Fakultas Syariah</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label>Status</label>
-        <select>
-          <option>Semua Status</option>
-          <option>Aktif</option>
-          <option>Non-Aktif</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label>Angkatan</label>
-        <select>
-          <option>Semua Angkatan</option>
-          <option>2024</option>
-          <option>2023</option>
-        </select>
-      </div>
-      <button class="filter-button">Filter</button>
-    </div>
 
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>NIM</th>
-            <th>Nama Lengkap</th>
-            <th>Email</th>
-            <th>Fakultas</th>
-            <th>Program Studi</th>
-            <th>Angkatan</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2024010001</td>
-            <td>Ahmad Fauzi Rahman</td>
-            <td>ahmad.fauzi@student.uinny.edu</td>
-            <td>Fakultas Syariah</td>
-            <td>Hukum Islam</td>
-            <td>2024</td>
-            <td><span class="badge verified">Terverifikasi</span></td>
-          </tr>
-          <tr>
-            <td>2024010002</td>
-            <td>Siti Nurhalimah</td>
-            <td>siti.nurhalimah@student.uinny.edu</td>
-            <td>Fakultas Tarbiyah</td>
-            <td>Pendidikan Agama</td>
-            <td>2024</td>
-            <td><span class="badge pending">Pending</span></td>
-          </tr>
-          <tr>
-            <td>2023010121</td>
-            <td>Umar Faruq Abdullah</td>
-            <td>umar.faruq@student.uinny.edu</td>
-            <td>Fakultas Teknik</td>
-            <td>Teknik Informatika</td>
-            <td>2023</td>
-            <td><span class="badge inactive">Tidak Aktif</span></td>
-          </tr>
-  <tr>
-    <td>2024010001</td>
-    <td>Ahmad Fauzi Rahman</td>
-    <td>ahmad.fauzi@student.uinny.edu</td>
-    <td>Fakultas Syariah</td>
-    <td>Hukum Islam</td>
-    <td>2024</td>
-    <td><span class="badge verified">Terverifikasi</span></td>
-  </tr>
-  <tr>
-    <td>2024010002</td>
-    <td>Siti Nurhalimah</td>
-    <td>siti.nurhalimah@student.uinny.edu</td>
-    <td>Fakultas Tarbiyah</td>
-    <td>Pendidikan Agama</td>
-    <td>2024</td>
-    <td><span class="badge pending">Pending</span></td>
-  </tr>
-  <tr>
-    <td>2023010121</td>
-    <td>Umar Faruq Abdullah</td>
-    <td>umar.faruq@student.uinny.edu</td>
-    <td>Fakultas Teknik</td>
-    <td>Teknik Informatika</td>
-    <td>2023</td>
-    <td><span class="badge inactive">Tidak Aktif</span></td>
-  </tr>
-  <tr>
+      <div class="filter-box">
+        <div class="filter-group">
+          <label>Cari Mahasiswa</label>
+          <input type="text" placeholder="Nama, NIM, atau Email..."/>
+        </div>
+        <div class="filter-group">
+          <label>Fakultas</label>
+          <select>
+            <option>Semua Fakultas</option>
+            <option>Fakultas Sains</option>
+            <option>Fakultas Syariah</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Status</label>
+          <select>
+            <option>Semua Status</option>
+            <option>Aktif</option>
+            <option>Non-Aktif</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Angkatan</label>
+          <select>
+            <option>Semua Angkatan</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+        </div>
+        <button class="filter-button">Filter</button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>NIM</th>
+              <th>Nama Lengkap</th>
+              <th>Email</th>
+              <th>Fakultas</th>
+              <th>Program Studi</th>
+              <th>Angkatan</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data rows, bisa ditambahkan sebanyak yang diinginkan -->
+            <!-- Mulai dari sini isi sesuai data Anda -->
+            <tr>
+              <td>2024010001</td>
+              <td>Ahmad Fauzi Rahman</td>
+              <td>ahmad.fauzi@student.uinny.edu</td>
+              <td>Fakultas Syariah</td>
+              <td>Hukum Islam</td>
+              <td>2024</td>
+              <td><span class="badge verified">Terverifikasi</span></td>
+            </tr>
+            <tr>
+              <td>2024010002</td>
+              <td>Siti Nurhalimah</td>
+              <td>siti.nurhalimah@student.uinny.edu</td>
+              <td>Fakultas Tarbiyah</td>
+              <td>Pendidikan Agama</td>
+              <td>2024</td>
+              <td><span class="badge pending">Pending</span></td>
+            </tr>
+            <tr>
+              <td>2023010121</td>
+              <td>Umar Faruq Abdullah</td>
+              <td>umar.faruq@student.uinny.edu</td>
+              <td>Fakultas Teknik</td>
+              <td>Teknik Informatika</td>
+              <td>2023</td>
+              <td><span class="badge inactive">Tidak Aktif</span></td>
+            </tr>
+           <tr>
     <td>2024010003</td>
     <td>Rina Kartika Dewi</td>
     <td>rina.kartika@student.uinny.edu</td>
@@ -387,17 +367,18 @@
     <td>2024</td>
     <td><span class="badge verified">Terverifikasi</span></td>
   </tr>
-        </tbody>
-      </table>
+          </tbody>
+        </table>
 
-      <div class="pagination">
-        <button class="active">1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>Selanjutnya</button>
+        <div class="pagination">
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>Selanjutnya</button>
+        </div>
       </div>
     </div>
   </div>
-
 </body>
 </html>
+

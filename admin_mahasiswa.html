@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Data Mahasiswa - SIDAMAS</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    html, body {
+      height: 100%;
       margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #f5f7fa;
       color: #333;
+      overflow: hidden;
     }
 
     .sidebar {
@@ -21,6 +23,7 @@
       background-color: #ffffff;
       box-shadow: 2px 0 5px rgba(0,0,0,0.05);
       padding: 20px;
+      box-sizing: border-box;
     }
 
     .sidebar h2 {
@@ -54,8 +57,11 @@
     }
 
     .main {
-      margin-left: 270px;
+      margin-left: 250px;
+      height: 100vh;
+      overflow-y: auto;
       padding: 20px;
+      box-sizing: border-box;
     }
 
     .header-box {
@@ -91,15 +97,17 @@
     }
 
     .table-wrapper {
-      overflow-x: auto;
+      overflow: auto;
+      max-height: 600px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
+      min-width: 1200px;
     }
 
     th, td {
@@ -184,7 +192,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+           <tr>
             <td>1</td>
             <td>2024010001</td>
             <td>Park Jimin</td>
