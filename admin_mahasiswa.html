@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Mahasiswa - SIDAMAS</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100vh;
+      background-color: #ffffff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      color: #084c41;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      border-radius: 8px;
+    }
+
+    .sidebar ul li a.active,
+    .sidebar ul li a:hover {
+      background-color: #084c41;
+      color: #fff;
+    }
+
+    .main {
+      margin-left: 270px;
+      padding: 20px;
+    }
+
+    .header-box {
+      background-color: #084c41;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filters input,
+    .filters select {
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      min-width: 180px;
+    }
+
+    .filters button {
+      background-color: #084c41;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #084c41;
+      color: white;
+      text-align: left;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tr:hover {
+      background-color: #f2f2f2;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .badge.green { background-color: #d4edda; color: #155724; }
+    .badge.red { background-color: #f8d7da; color: #721c24; }
+    .badge.yellow { background-color: #fff3cd; color: #856404; }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>SIDAMAS</h2>
+    <ul>
+      <li><a href="#">Menu Utama</a></li>
+      <li><a class="active" href="#">Data Mahasiswa</a></li>
+      <li><a href="#">Data Fakultas</a></li>
+      <li><a href="#">Pengaturan</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="header-box">
+      <h3>Selamat Datang di Dashboard SIDAMAS</h3>
+      <p>Sistem Satu Data Mahasiswa UIN NEW YORK - Pusat informasi terintegrasi untuk manajemen data kemahasiswaan.</p>
+    </div>
+
+    <div class="filters">
+      <input type="text" placeholder="Nama, NIM, atau Email...">
+      <select><option>Semua Fakultas</option></select>
+      <select><option>Semua Status</option></select>
+      <select><option>Semua Angkatan</option></select>
+      <button>Filter</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>NIM</th>
+            <th>Nama Lengkap</th>
+            <th>Email</th>
+            <th>Fakultas</th>
+            <th>Program Studi</th>
+            <th>Angkatan</th>
+            <th>Jenis Kelamin</th>
+            <th>Alamat</th>
+            <th>No. Telpon</th>
+            <th>Status</th>
+            <th>Semester</th>
+            <th>IPK</th>
+            <th>SKS Tempuh</th>
+            <th>SKS Semester</th>
+            <th>SP</th>
+            <th>Status UKT</th>
+            <th>Status Beasiswa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>2024010001</td>
+            <td>Park Jimin</td>
+            <td>jimin.park@student.uinny.ac.id</td>
+            <td>Fakultas Saintek</td>
+            <td>Teknik Informatika</td>
+            <td>2021</td>
+            <td>Laki-laki</td>
+            <td>Jl. Cibiru Hilir No.88</td>
+            <td>082112334455</td>
+            <td><span class="badge green">Terverifikasi</span></td>
+            <td>5</td>
+            <td>3.67</td>
+            <td>72</td>
+            <td>18</td>
+            <td>1</td>
+            <td>Sudah Bayar UKT</td>
+            <td>Tidak Menerima</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2024010002</td>
+            <td>Siti Nurhalimah</td>
+            <td>siti.nurhalimah@student.uinny.ac.id</td>
+            <td>Fakultas Tarbiyah</td>
+            <td>Pendidikan Agama</td>
+            <td>2022</td>
+            <td>Perempuan</td>
+            <td>Jl. Cibiru Wetan</td>
+            <td>089911223344</td>
+            <td><span class="badge yellow">Pending</span></td>
+            <td>3</td>
+            <td>3.40</td>
+            <td>48</td>
+            <td>20</td>
+            <td>0</td>
+            <td>Belum Bayar UKT</td>
+            <td>Belum Menerima</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>2023010121</td>
+            <td>Umar Faruq Abdullah</td>
+            <td>umar.faruq@student.uinny.ac.id</td>
+            <td>Fakultas Teknik</td>
+            <td>Teknik Informatika</td>
+            <td>2023</td>
+            <td>Laki-laki</td>
+            <td>Jl. Cijambe No.77</td>
+            <td>088822334455</td>
+            <td><span class="badge red">Tidak Aktif</span></td>
+            <td>1</td>
+            <td>2.90</td>
+            <td>20</td>
+            <td>20</td>
+            <td>0</td>
+            <td>Belum Bayar</td>
+            <td>Sudah Menerima</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
